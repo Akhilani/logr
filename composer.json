@@ -1,0 +1,21 @@
+{
+    "name": "akhilani/logr",
+    "description": "Propertyguru test",
+    "type": "project",
+    "require": {
+        "phpunit/phpunit": "^6.3",
+        "mikey179/vfsStream": "~1"
+    },
+    "autoload": {
+        "psr-4": {
+            "akhilani\\logr\\": "src"
+        }
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Akhil Kadangode",
+            "email": "akhil.kadangode@gmail.com"
+        }
+    ]
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Angular JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body ng-app="logViewer" ng-cloak ng-controller="logCtrl">
+<div class="container mt-4">
+        <div class="form-row justify-content-center">
+            <div class="form-group col-md-6">
+                <div class="input-group">
+                    <input type="text" ng-model="filePath" class="form-control" placeholder="File path..." aria-label="File path...">
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary" ng-click="getLogs()" type="button">View</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    <div ng-if="msg" class="alert alert-secondary" role="alert">
+        {{msg}}
+    </div>
+        <ul class="list">
+            <li ng-repeat="log in logs" class="list-group-item">
+                <span>{{ log.line }}</span>
+                <span>{{ log.text }}</span>
+            </li>
+        </ul>
+    <nav class="mt-4">
+        <ul class="pagination justify-content-center">
+            <li ng-if="startingPoint > 0" class="page-item"><a class="page-link" ng-click="firstPage()">&laquo;</a></li>
+            <li ng-if="startingPoint > 0" class="page-item"><a class="page-link" ng-click="previousPage()">&lt;</a></li>
+            <li ng-if="startingPoint < totalLogs - 10" class="page-item"><a class="page-link" ng-click="nextPage()">&gt;</a></li>
+            <li ng-if="startingPoint < totalLogs -10" class="page-item"><a class="page-link" ng-click="lastPage()">&raquo;</a></li>
+        </ul>
+    </nav>
+</div>
+<script src="assets/js/logViewer.js"></script>
+</body>
+</html>
