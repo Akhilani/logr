@@ -3,7 +3,7 @@ INSTALLATION:
 2) run composer install to install all the dependencies
 
 TESTING:
-1) from "propertyguru" directory, run "php vendor/phpunit/phpunit/phpunit tests"
+1) from root directory, run "php vendor/phpunit/phpunit/phpunit tests"
 
 DIRECTORY STRUCTURE:
 - assets/css : custom CSS files
